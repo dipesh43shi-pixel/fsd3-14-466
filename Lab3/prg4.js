@@ -13,7 +13,7 @@ else if (req.url === "/cart") {
 else if (req.url === "/checkout") {
     res.end("<h1>Checkout Page</h1>");
 }
-else {
+else { 
     res.statusCode = 404;
     res.end(`
         <h1>Page Not Found</h1>
