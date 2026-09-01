@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>TechZone | Products</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: #f5f7fb;
+    color: #1f2937;
+}
+
+nav {
+    background: #111827;
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: white;
+    font-size: 27px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #38bdf8;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #38bdf8;
+}
+
+.header {
+    background: linear-gradient(135deg,#0f172a,#1e3a8a);
+    color: white;
+    text-align: center;
+    padding: 65px 20px;
+}
+
+.header h1 {
+    font-size: 45px;
+    margin-bottom: 12px;
+}
+
+.header p {
+    color: #dbeafe;
+}
+
+.products {
+    padding: 65px 7%;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 25px;
+}
+
+.card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    transition: 0.3s;
+    position: relative;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+.badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: #ef4444;
+    color: white;
+    padding: 6px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    z-index: 2;
+}
+
+.phone-image {
+    height: 280px;
+    background: #f1f5f9;
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.phone-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card-content h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.rating {
+    color: #f59e0b;
+    margin-bottom: 12px;
+}
+
+.specs {
+    list-style: none;
+    margin-bottom: 15px;
+}
+
+.specs li {
+    padding: 5px 0;
+    color: #6b7280;
+    font-size: 14px;
+}
+
+.price {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.old-price {
+    color: #9ca3af;
+    text-decoration: line-through;
+    font-size: 14px;
+}
+
+.buy-btn {
+    display: block;
+    text-align: center;
+    background: #111827;
+    color: white;
+    padding: 11px;
+    border-radius: 7px;
+    text-decoration: none;
+}
+
+.buy-btn:hover {
+    background: #2563eb;
+}
+
+footer {
+    background: #111827;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+footer p {
+    color: #9ca3af;
+    margin-top: 8px;
+}
+
+@media(max-width:1000px) {
+
+    .product-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:700px) {
+
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav ul {
+        gap: 15px;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<nav>
+
+<div class="logo">
+Tech<span>Zone</span>
+</div>
+
+<ul>
+
+<li><a href="index.html">Home</a></li>
+
+<li><a href="about.html">About</a></li>
+
+<li><a href="products.html">Products</a></li>
+
+<li><a href="contact.html">Contact</a></li>
+
+</ul>
+
+</nav>
+
+
+<section class="header">
+
+<h1>Latest 5G Smartphones</h1>
+
+<p>
+Explore our collection of the latest smartphones.
+</p>
+
+</section>
+
+
+<section class="products">
+
+<div class="product-grid">
+
+
+<div class="card">
+
+<span class="badge">NEW</span>
+
+<div class="phone-image">
+
+<img
+src="https://commons.wikimedia.org/wiki/Special:FilePath/Galaxy_S26.jpg"
+alt="Samsung Galaxy S26">
+
+</div>
+
+<div class="card-content">
+
+<h3>Samsung Galaxy S26</h3>
+
+<div class="rating">★★★★★</div>
+
+<ul class="specs">
+
+<li>⚡ 5G Connectivity</li>
+<li>📱 AMOLED Display</li>
+<li>📷 50MP Camera</li>
+<li>💾 256GB Storage</li>
+
+</ul>
+
+<div class="price">
+₹79,999
+<span class="old-price">₹84,999</span>
+</div>
+
+<a href="#" class="buy-btn">
+View Details
+</a>
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<span class="badge">POPULAR</span>
+
+<div class="phone-image">
+
+<img
+src="https://commons.wikimedia.org/wiki/Special:FilePath/White_iPhone_17.jpg"
+alt="iPhone 17">
+
+</div>
+
+<div class="card-content">
+
+<h3>iPhone 17</h3>
+
+<div class="rating">★★★★★</div>
+
+<ul class="specs">
+
+<li>⚡ 5G Connectivity</li>
+<li>📱 Super Retina Display</li>
+<li>📷 48MP Camera</li>
+<li>💾 256GB Storage</li>
+
+</ul>
+
+<div class="price">
+₹79,900
+<span class="old-price">₹84,900</span>
+</div>
+
+<a href="#" class="buy-btn">
+View Details
+</a>
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<span class="badge">HOT DEAL</span>
+
+<div class="phone-image">
+
+<img
+src="https://commons.wikimedia.org/wiki/Special:FilePath/OnePlus_13_back.jpg"
+alt="OnePlus 13">
+
+</div>
+
+<div class="card-content">
+
+<h3>OnePlus 13</h3>
+
+<div class="rating">★★★★☆</div>
+
+<ul class="specs">
+
+<li>⚡ 5G Connectivity</li>
+<li>📱 6.82" AMOLED</li>
+<li>📷 50MP Camera</li>
+<li>💾 256GB Storage</li>
+
+</ul>
+
+<div class="price">
+₹69,999
+<span class="old-price">₹74,999</span>
+</div>
+
+<a href="#" class="buy-btn">
+View Details
+</a>
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<span class="badge">BEST VALUE</span>
+
+<div class="phone-image">
+
+<img
+src="https://commons.wikimedia.org/wiki/Special:FilePath/Pixel_10_back_(Obsidian).svg"
+alt="Google Pixel 10">
+
+</div>
+
+<div class="card-content">
+
+<h3>Google Pixel 10</h3>
+
+<div class="rating">★★★★★</div>
+
+<ul class="specs">
+
+<li>⚡ 5G Connectivity</li>
+<li>📱 OLED Display</li>
+<li>📷 AI Camera</li>
+<li>💾 256GB Storage</li>
+
+</ul>
+
+<div class="price">
+₹74,999
+<span class="old-price">₹79,999</span>
+</div>
+
+<a href="#" class="buy-btn">
+View Details
+</a>
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<footer>
+
+<h3>TechZone</h3>
+
+<p>© 2026 TechZone. All Rights Reserved.</p>
+
+</footer>
+
+
+</body>
+
+</html>
