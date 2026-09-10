@@ -12,7 +12,7 @@ let teams =[
 },//why this cross in name ,it suggest to use anither word as it very commonlt us3d 
 ];
 
-let nextId=3;
+let nextId=3; 
 
 
 export const getAllTeams = ()=>teams;
