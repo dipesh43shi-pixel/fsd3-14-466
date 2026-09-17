@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samsung Galaxy | Epic Innovations</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-color: #0b0b0f;
+            --card-bg: #141419;
+            --accent-blue: #1b73e8;
+            --accent-glow: rgba(27, 115, 232, 0.4);
+            --text-main: #ffffff;
+            --text-muted: #9aa0a6;
+            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* Navbar */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: rgba(11, 11, 15, 0.85);
+            backdrop-filter: blur(12px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: var(--text-main);
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 35px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-size: 14px;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--text-main);
+        }
+
+        .nav-actions {
+            display: flex;
+            gap: 20px;
+            font-size: 18px;
+            cursor: pointer;
+            color: var(--text-main);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            position: relative;
+            background: radial-gradient(circle at center, #1c1c2e 0%, var(--bg-color) 70%);
+        }
+
+        .hero-badge {
+            background: rgba(27, 115, 232, 0.15);
+            color: #4da3ff;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            border: 1px solid rgba(27, 115, 232, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero h1 {
+            font-size: clamp(40px, 7vw, 80px);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            background: linear-gradient(180deg, #ffffff 0%, #a0a0a5 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: clamp(16px, 2vw, 20px);
+            color: var(--text-muted);
+            max-width: 600px;
+            margin-bottom: 40px;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background: var(--text-main);
+            color: var(--bg-color);
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-blue);
+            color: #fff;
+            box-shadow: 0 0 30px var(--accent-glow);
+            transform: translateY(-2px);
+        }
+
+        /* Product Showcase Section */
+        .showcase {
+            padding: 100px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: var(--text-muted);
+            font-size: 16px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background: var(--card-bg);
+            border-radius: 24px;
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: var(--transition);
+            overflow: hidden;
+        }
+
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at top, var(--accent-glow) 0%, transparent 70%);
+            opacity: 0;
+            transition: var(--transition);
+            z-index: 1;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(27, 115, 232, 0.4);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        }
+
+        .product-card:hover::before {
+            opacity: 1;
+        }
+
+        .product-card > * {
+            position: relative;
+            z-index: 2;
+        }
+
+        .product-img {
+            width: 100%;
+            height: 280px;
+            object-fit: contain;
+            margin-bottom: 30px;
+            transition: var(--transition);
+        }
+
+        .product-card:hover .product-img {
+            transform: scale(1.05);
+        }
+
+        .product-card h3 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .product-card p {
+            color: var(--text-muted);
+            font-size: 14px;
+            margin-bottom: 25px;
+            line-height: 1.5;
+        }
+
+        .card-actions {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .btn-text {
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: var(--transition);
+        }
+
+        .btn-text:hover {
+            color: var(--accent-blue);
+        }
+
+        .btn-text i {
+            font-size: 12px;
+            transition: var(--transition);
+        }
+
+        .btn-text:hover i {
+            transform: translateX(4px);
+        }
+
+        /* Footer */
+        footer {
+            background: #07070a;
+            padding: 40px 8%;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--text-muted);
+            font-size: 13px;
+        }
+
+        /* Responsive Design */
+        @media(max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            nav {
+                padding: 20px 5%;
+            }
+            .hero h1 {
+                font-size: 36px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">SAMSUNG</div>
+        <ul class="nav-links">
+            <li><a href="#">Smartphones</a></li>
+            <li><a href="#">Galaxy AI</a></li>
+            <li><a href="#">Watch</a></li>
+            <li><a href="/about">About us</a></li>
+            <li><a href="/enquiry">Enquiry</a></li>
+        </ul>
+        <div class="nav-actions">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <i class="fa-solid fa-bag-shopping"></i>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-badge">Galaxy AI is Here</div>
+        <h1>Galaxy S25 Ultra</h1>
+        <p>Experience epic intelligence, titanium durability, and a professional camera system built to redefine what a smartphone can do.</p>
+        <a href="#showcase" class="btn-primary">Pre-order Now</a>
+    </section>
+
+    <!-- Product Showcase Section -->
+    <section class="showcase" id="showcase">
+        <div class="section-title">
+            <h2>The Latest Flagships</h2>
+            <p>Choose your power. Crafted with precision, engineered for the future.</p>
+        </div>
+
+        <div class="product-grid">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?auto=format&fit=crop&w=600&q=80" alt="Galaxy S24 Ultra" class="product-img">
+                <h3>Galaxy S24 Ultra</h3>
+                <p>Equipped with built-in Galaxy AI, a 200MP camera, and ultimate Snapdragon performance.</p>
+                <div class="card-actions">
+                    <a href="#" class="btn-text">Learn more <i class="fa-solid fa-chevron-right"></i></a>
+                    <a href="#" class="btn-text">Buy <i class="fa-solid fa-chevron-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1580910051074-3eb694886505?auto=format&fit=crop&w=600&q=80" alt="Galaxy Z Fold6" class="product-img">
+                <h3>Galaxy Z Fold6</h3>
+                <p>The slimmest, lightest foldable yet. Unleash supreme multitasking on a massive immersive screen.</p>
+                <div class="card-actions">
+                    <a href="#" class="btn-text">Learn more <i class="fa-solid fa-chevron-right"></i></a>
+                    <a href="#" class="btn-text">Buy <i class="fa-solid fa-chevron-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=600&q=80" alt="Galaxy Z Flip6" class="product-img">
+                <h3>Galaxy Z Flip6</h3>
+                <p>Flex your style. Compact, expressive, and upgraded with AI-powered ProVisual engine.</p>
+                <div class="card-actions">
+                    <a href="#" class="btn-text">Learn more <i class="fa-solid fa-chevron-right"></i></a>
+                    <a href="#" class="btn-text">Buy <i class="fa-solid fa-chevron-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Samsung Electronics Co., Ltd. All rights reserved. Designed for demonstration purposes.</p>
+    </footer>
+
+</body>
+</html>
