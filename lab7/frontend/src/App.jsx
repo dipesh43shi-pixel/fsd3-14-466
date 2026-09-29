@@ -1,3 +1,4 @@
+// agr file name jsx ho t o jb curly braces use kroge complier smjh jaayega ki js use kr rhe ho 
 const b1={
   picUrl: "https://m.media-amazon.com/images/I/71jOhVzGjjL._AC_UY327_FMwebp_QL65_.jpg",
   bname : "React Design Pattern",
@@ -9,12 +10,13 @@ function Book(){
   return (
     <div> 
       <img 
-      src="https://m.media-amazon.com/images/I/71jOhVzGjjL._AC_UY327_FMwebp_QL65_.jpg"
-      alt="Design Pattern React "/>
-    <h1> Lets Us React </h1>
-    <h2> Price : 765</h2>
-    <h3> Quantity : 5</h3>
-    <h4> Rating : 5.0 </h4>
+      src={b1.picUrl}
+      alt={b1.bname}
+      />
+    <h1> {b1.bname}</h1>
+    <h2> Price : {b1.price}</h2>
+    <h3> Quantity : {b1.quantity}</h3>
+    <h4> Rating : {b1.rating} </h4>
     </div>
   );
 }
