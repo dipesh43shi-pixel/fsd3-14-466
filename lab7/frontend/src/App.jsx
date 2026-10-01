@@ -1,4 +1,6 @@
-// agr file name jsx ho t o jb curly braces use kroge complier smjh jaayega ki js use kr rhe ho 
+import Book from "./components/Book";// agr file name jsx ho t o jb curly braces use kroge complier smjh jaayega ki js use kr rhe ho 
+import Pen from "./components/pen";
+
 const b1={
   picUrl: "https://m.media-amazon.com/images/I/71jOhVzGjjL._AC_UY327_FMwebp_QL65_.jpg",
   bname : "React Design Pattern",
@@ -14,25 +16,22 @@ const b2={
   quantity : 10,
   rating :5.0,
 };
+const p1={
+  picUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNigUXCohzK0x2qdsVvkng4lmoNJTEXIDOx-ZeUaEjCw&s=10",
+  company:"Parker",
+  price:1000,
+
+};
+
+const p2={
+  picUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSV0yq_l0qKy7p2BD4EmgaQIfAxbfdjaTpr78QQyGc0Og&s=10",
+  company:"Parker folis",
+  price:1500,
+
+};
 
 
-function Book(props){
-  //console.log(props);
-  const {rating ,bname,price,quantity,picUrl}=props.book;
-  return (
-    <div className="book">
-     
-      <img 
-      src={picUrl} 
-      alt={bname}
-      />
-    <h1> {bname}</h1>
-    <h2> Price : {price}</h2>
-    <h3> Quantity : {quantity}</h3>
-    <h4> Rating : {rating} </h4>
-    </div>
-  );
-}
+  
 
 export default function App() {
   
@@ -47,6 +46,8 @@ export default function App() {
     <Book book ={b2}/>
     <Book book={b1}/>
     <Book book={b2}/>
+    <Pen pen={p1}/>
+    <Pen pen={p2}/>
     </div>
     </>
   );
